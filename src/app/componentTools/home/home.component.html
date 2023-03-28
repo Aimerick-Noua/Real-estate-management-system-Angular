@@ -1,0 +1,61 @@
+<div class="filters bg-dark text-white">
+    <mat-form-field appearance="fill">
+    
+        <mat-label><span class="text-white">Real Estates By</span> </mat-label>
+        <mat-select [(value)]="sort">
+          <mat-option value="name">Name</mat-option>
+          <mat-option value="price">Price</mat-option>
+          <mat-option value="category">Category</mat-option>
+          <mat-option value="location">Location</mat-option>
+          <mat-option value="area">Area</mat-option>
+          <mat-option value="rating">Rating</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+      <div class="container-fill  main bg-dark" >
+        <mat-grid-list cols="4" rowHeight="4:6" rowWidth="3:6" gutterSize="25" >
+          <mat-grid-tile *ngFor="let p of prodata" (click)="openPropertyDetails(p.id)">
+            <div class="row home-page-image" >
+              <img [src]="p.propertyImages[0].url" alt="" class="images"  /> 
+              <div class="pl-3">
+                <div class=" mt-3 row">
+                  <div class="col-md-1">
+                    <span class="material-symbols-outlined size-loc">home_pin</span>
+                  </div>
+                  <div class="col-sm p-loc">
+                    Cameroon, {{p.location}}
+                  </div>
+                </div>
+                  <p><b><h2 class="capitalize">{{p.name}}</h2></b></p>
+              </div>
+              <div class="row text-center">
+                <div class="col-sm">
+                  <p>{{p.numRoom}}<span class="material-symbols-outlined a">bed</span></p>
+                </div>
+                <div class="col-sm">
+                  <p>{{p.numBath}}<span class="material-symbols-outlined a">shower</span></p>
+                </div>
+                <div class="col-sm">
+                  <p>{{p.area}}m<sup>2</sup><span class="material-symbols-outlined a">square_foot</span>
+                  </p>
+                </div>
+                
+              </div>
+              <div *ngIf="p.status==='For Rent'" class="text-warning price mt-3" >             
+                <p align="end"><b>{{p.price| number:'.0-0'}} FCFA/month</b></p>
+              </div>
+              <div *ngIf="p.status==='For Sale'" class="text-danger price mt-3" >             
+                <p align="end"><b>{{p.price| number:'.0-0'}} FCFA</b></p>
+              </div>
+            </div>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div>
+      </div>
+
+
+
+
+
+

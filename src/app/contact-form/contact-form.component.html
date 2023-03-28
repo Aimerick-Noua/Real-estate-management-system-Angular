@@ -1,0 +1,44 @@
+
+    <div class="col-sm-12" >
+    <div class="card">
+      <div class="card-body login-card-body">
+        <a routerLink="/"><b><img src="assets/immoLogo.png" width="150px" alt="logo" class="logo"/></b></a>
+        <p class="login-box-msg"></p>
+  
+        <form [formGroup]="contactForm">
+          <div class="input-group mb-3">
+            <input type="email" 
+            ngModel
+            name="destinataire" id="email" class="form-control" placeholder="Email" formControlName="destinataire">
+            <div class="input-group-append">
+              <div class="input-group-text">
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text"
+            [(ngModel)]="data.name"
+            name="objet" id="objet" value="data.name" class="form-control"placeholder="Object" formControlName="objet" readonly>
+            <div class="input-group-append">
+             
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <textarea name="message" ngModel id="message" cols="20" rows="10" placeholder="message" formControlName="message"></textarea> 
+            <div class="input-group-append">
+            </div>
+        </div>
+            <!-- /.col -->
+            <div class="row" align="center" >
+              <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close class="btn btn-warning">Cancel</button>
+                <button mat-button [mat-dialog-close]="true" type="submit" class="btn btn-primary" (click)="submit()" cdkFocusInitial>Submit</button>
+              </mat-dialog-actions>
+            </div>
+            <!-- /.col -->   
+        </form>
+     </div>
+  </div>
+  </div>
+ 
+  

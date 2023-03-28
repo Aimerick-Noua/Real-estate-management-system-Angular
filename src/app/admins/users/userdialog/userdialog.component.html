@@ -1,0 +1,51 @@
+
+          <div class="card-body p-1 mt-5">
+            <h1 class="text-center text-primary p-3" style="margin-top: -5%; ">Registration Form</h1>
+            <form [formGroup]="usersForm">
+                <div class="col-md-12 mb-4">
+
+                
+
+                  <div class="form-outline">
+                    <input type="text" id="userName" formControlName="userName" class="form-control form-control-md" />
+                    <label class="form-label" for="userName">UserName</label>
+                  </div>
+
+                </div>
+                <div class="col-md-12 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="userFirstName" class="form-control form-control-md" formControlName="userFirstName" />
+                    <label class="form-label" for="userFirstName" >FirstName</label>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="userLastName" class="form-control form-control-md" formControlName="userLastName" />
+                    <label class="form-label" for="userLastName" >LastName</label>
+                  </div>
+                </div>
+
+              
+                <div class="col-md-12 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="email" id="userEmail" class="form-control form-control-md" formControlName="userEmail"/>
+                    <label class="form-label" for="userEmail">Email</label>
+                  </div>
+                </div>
+
+                <div class="col-md-12 mb-4">
+                  <div class="form-outline">
+                    <input type="password" id="userPassword" class="form-control form-control-md" formControlName="userPassword" />
+                    <label class="form-label" for="userPassword">Password</label>
+                  </div>
+                </div>
+              
+              <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close class="bg-danger">Cancel</button>
+                <button mat-button [mat-dialog-close]="true" class="bg-success" (click)="saveUsers()">{{actionBtn}}</button>
+              </mat-dialog-actions>
+            </form>
+          </div>

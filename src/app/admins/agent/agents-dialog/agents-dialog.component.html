@@ -1,0 +1,111 @@
+
+          <div class="card-body p-4 p-md-5">
+            <h3 class="">Registration Form</h3>
+            <form [formGroup]="agentsForm">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="userName" formControlName="userName" class="form-control form-control-md" />
+                    <label class="form-label" for="userName">UserName</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="firstName" formControlName="firstName" class="form-control form-control-md" />
+                    <label class="form-label" for="firstName">First Name</label>
+                  </div>
+                </div>
+                
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-md" formControlName="lastName" />
+                    <label class="form-label" for="lastName" >Last Name</label>
+                  </div>   
+                </div>
+                <div class="col-md-6 mb-4" >
+                  <h5 class="mb-2 pb-1"><strong>Gender: </strong> </h5>
+                  <div class="form-check form-check-inline">
+                    <mat-radio-group aria-label="Select an option" formControlName="sex">
+                      <mat-radio-button class="ml-2" *ngFor="let option of options"  [value]="option">{{option}}</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control-md" formControlName="email"/>
+                    <label class="form-label" for="email">Email</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="password" id="password" class="form-control form-control-md" formControlName="password"/>
+                    <label class="form-label" for="password">Password</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                   <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="telNum" class="form-control form-control-md" formControlName="telNum" />
+                        <label class="form-label" for="telNum" >Telephone</label>
+                      </div>
+                    </div>
+              
+
+                  <div class="col-md-6 mb-4" >
+                  <h5 class="mb-2 pb-1"><strong>Marital Status</strong> </h5>
+                  <div class="form-check form-check-inline">
+                    <mat-radio-group aria-label="Select an option" formControlName="marital_status">
+                      <mat-radio-button class="ml-2" *ngFor="let option of status"  [value]="option">{{option}}</mat-radio-button>
+                    </mat-radio-group>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="nationality" class="form-control form-control-md" formControlName="nationality" />
+                    <label class="form-label" for="nationality" >Nationality</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+                  <div class="form-outline datepicker w-100">
+                    <input type="date" class="form-control form-control-md" id="birthdayDate" formControlName="dob"/>
+                    <label for="birthdayDate" class="form-label">Date Of Birth</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class=" col-md-6" style="width: 100;">
+
+                  <select class="select form-control-sm" formControlName="address">
+                    <option value="Douala">Douala</option>
+                    <option value="Yaounde">Yaounde</option>
+                    <option value="bafoussam">bafoussam</option>
+                    <option value="Ebolowa">Ebolowa</option>
+                    <option value="Ngaoundere">Ngaoundere</option>
+                    <option value="Bertoua">Bertoua</option>
+                    <option value="Bamenda">Bamenda</option>
+                    <option value="Buea">Buea</option>
+                    <option value="maroua">maroua</option>
+                    <option value="garoua">garoua</option>
+                  </select>
+                  <label class="form-label select-label">Choose Town</label>             
+                </div>
+              </div>
+              <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close class="bg-danger">Cancel</button>
+                <button mat-button [mat-dialog-close]="true" class="bg-success" (click)="saveAgent()">{{actionBtn}}</button>
+              </mat-dialog-actions>
+            </form>
+          </div>
+        

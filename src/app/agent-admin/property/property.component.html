@@ -1,0 +1,123 @@
+<div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Manage Real Estates</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Real estate</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="container">
+          <p>
+            <mat-toolbar class="bg-light">
+              <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+              </button>
+              <span></span>
+              <span class="example-spacer"></span>
+              <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+                <mat-icon></mat-icon>
+              </button>
+              <button type="button" mat-raised-button color="warn" class="float-right m-3" (click)="openDialog()">Add Real Estate</button>
+            </mat-toolbar>
+          </p>
+        </div>
+        <div class="container col-md-12">
+          <mat-form-field appearance="outline">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. m-rick" #input>
+          </mat-form-field>
+  
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+  
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+                <td mat-cell *matCellDef="let row"> <h5>{{row.name|uppercase}} </h5></td>
+              </ng-container>
+
+              <ng-container matColumnDef="images">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
+                <td mat-cell *matCellDef="let row " >
+                  <button (click)="showPropertyImages(row)" class="btn btn-primary"><mat-icon>images</mat-icon></button>
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+                <td mat-cell *matCellDef="let row"> {{row.price|number:'.0-0'}} </td>
+              </ng-container>
+  
+              <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Town </th>
+                <td mat-cell *matCellDef="let row"> {{row.location}} </td>
+              </ng-container>
+              <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Status </th>
+                <td mat-cell *matCellDef="let row"> {{row.status}} </td>
+              </ng-container>
+    
+              <ng-container matColumnDef="category">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Category </th>
+                <td mat-cell *matCellDef="let row"> {{row.category}} </td>
+              </ng-container>
+              <ng-container matColumnDef="numKitchen">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Numkitchen </th>
+                <td mat-cell *matCellDef="let row"> {{row.numKitchen}} </td>
+              </ng-container>
+              <ng-container matColumnDef="numRoom">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>NumRoom </th>
+                <td mat-cell *matCellDef="let row"> {{row.numRoom}} </td>
+              </ng-container>
+              <ng-container matColumnDef="numLivingRoom">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> NumPalour </th>
+                <td mat-cell *matCellDef="let row"> {{row.numLivingRoom}} </td>
+              </ng-container>
+              <ng-container matColumnDef="numBath">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> NumBath </th>
+                <td mat-cell *matCellDef="let row"> {{row.numBath}}</td>
+              </ng-container>
+              <ng-container matColumnDef="area">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> SurfArea </th>
+                <td mat-cell *matCellDef="let row"> {{row.area}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="last_update">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Update </th>
+                <td mat-cell *matCellDef="let row"> {{row.last_update|date}} </td>
+              </ng-container>
+             
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+  
+                <td mat-cell *matCellDef="let row">
+                  <button mat-icon-button color="primary" (click)="editProperty(row)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button mat-icon-button color="warn" (click)="deleteProperty(row.id)">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                 
+                </td>
+              </ng-container>
+  
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+              </tr>
+            </table>
+  
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          </div>
+        </div>
+      </div>
+     

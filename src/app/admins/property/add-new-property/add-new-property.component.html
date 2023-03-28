@@ -1,0 +1,184 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Manage Real Estates</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Real estate</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="container-fluid">
+            <div class="container">
+
+
+            </div>
+            <div class="container mt-1">
+                <div class=" card p-3">
+
+                    <div class="row">
+
+                        <div class="col-6">
+                            <form #propertyForm="ngForm" (ngSubmit)="addProperty(propertyForm)">
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>property Title</mat-label>
+                                            <input matInput type="text" [(ngModel)]="property.name" name="name"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>quater</mat-label>
+                                            <input matInput [(ngModel)]="property.owner" name="owner" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>price</mat-label>
+                                            <input matInput [(ngModel)]="property.price" name="price" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Caution</mat-label>
+                                            <input matInput [(ngModel)]="property.rating" name="rating" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Status</mat-label>
+                                            <input matInput [(ngModel)]="property.status" name="status" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Category</mat-label>
+                                            <input matInput [(ngModel)]="property.category" name="category"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Description</mat-label>
+                                            <input matInput [(ngModel)]="property.description" name="description"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>numLivingRoom</mat-label>
+                                            <input matInput [(ngModel)]="property.numLivingRoom" name="numLivingRoom"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>numKitchen</mat-label>
+                                            <input matInput [(ngModel)]="property.numKitchen" name="numKitchen"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>Address</mat-label>
+                                            <input matInput [(ngModel)]="property.location" name="location"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>numBath</mat-label>
+                                            <input matInput [(ngModel)]="property.numBath" name="numBath"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>numRoom</mat-label>
+                                            <input matInput [(ngModel)]="property.numRoom" name="numRoom"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>area</mat-label>
+                                            <input matInput [(ngModel)]="property.area" name="area" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>terms</mat-label>
+                                            <input matInput [(ngModel)]="property.terms" name="terms" required="name">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-6">
+                                        <mat-form-field appearance="outline" class="w-100">
+                                            <mat-label>nearbyPlaces</mat-label>
+                                            <input matInput [(ngModel)]="property.nearbyPlaces" name="nearbyPlaces"
+                                                required="name">
+                                        </mat-form-field>
+                                    </div>
+
+
+
+                                </div>
+                                <div align="end" class="d-flex">
+                                    <div>
+                                        <button mat-stroked-button color="primary">Clear</button>
+                                    </div>
+                                    <div class="ml-3">
+                                        <button mat-stroked-button color="primary" type="submit">Add Estate</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-6">
+
+
+                            <div>
+
+                                <div class="dropzone" appDrag (files)="fileDrop($event)">
+                                    <div class="text-wrapper">
+                                        <div class="centered">
+                                            Drag and drop your file or <a (click)="selectFile.click()"
+                                                class="brows">browse file</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <input multiple type="file" style="display: none;" name="" value="select" #selectFile
+                                    (change)="onFileSelectedEvent($event)">
+
+                            </div>
+                            <div class="mt-5">
+                                <div class="row">
+                                    <mat-grid-list cols="4" rowHeight="1:1">
+                                        <mat-grid-tile *ngFor="let file of property.propertyImages; let i=index;">
+                                            <div style="position:relative;">
+                                                <span class="btn" (click)="removeImage(i)">x</span>
+                                                <img [src]="file.url" alt="image" width="100px" height="100px">
+                                            </div>
+                                        </mat-grid-tile>
+                                    </mat-grid-list>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

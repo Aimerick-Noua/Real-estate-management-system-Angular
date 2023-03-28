@@ -1,0 +1,10 @@
+#message{
+    width: 100%;
+    padding: 3%;
+}
+.logo{
+    margin-left: 40%;
+}
+.card-body{
+    text-shadow: 2px 5px 9px black;
+}

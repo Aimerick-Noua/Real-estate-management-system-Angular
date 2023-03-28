@@ -1,0 +1,29 @@
+<div class="container-fill navbaring">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a  routerLink="/" class="navbar-brand"><b><img src="assets/immoLogo.png" width="60px" alt="logo" class="logo"/></b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/homePage">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Properties <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Services <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Contact <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button *ngIf="!isLoggedIn()" type="button" class="btn btn-success mr-2" routerLink="/signin">login</button>
+      <button *ngIf="isLoggedIn()"type="button" class="btn btn-danger" (click)="logout()">logout</button>
+    </form>
+  </div>
+</nav>
+</div>

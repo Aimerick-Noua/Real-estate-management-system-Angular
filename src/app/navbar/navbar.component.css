@@ -1,0 +1,10 @@
+.btn{
+    height: 30px;
+    font-size: 80%;
+}
+.logo{
+border-radius: 50%;
+}
+.navbaring{
+  border-bottom: 2px solid rgb(128, 128, 128);
+}

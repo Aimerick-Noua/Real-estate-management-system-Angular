@@ -1,0 +1,189 @@
+
+<div class="wrapper">
+
+   
+  
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-white elevation-4  " style="margin-top:5% ;">
+      <!-- Brand Logo -->
+    
+  
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+          <div class="image img-circle">
+              <i class="nav-icon far fa-user text-dark"></i>
+
+          </div>
+          <div class="info">
+            <a href="#" class="d-block">Admins123</a>
+          </div>
+        </div>
+  
+        <!-- Sidebar Menu -->
+        <nav class="mt-2">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item has-treeview menu-open">
+              <a routerLink="./dashb" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                  <i class="right fas fa-angle"></i>
+                </p>
+              </a>
+             
+            </li>
+            <li class="nav-item has-treeview">
+            <li class="nav-item">
+              <a routerLink="./agents" class="nav-link">
+                <i class="nav-icon far fa-user"></i>
+                <p>
+                  Manage Agents
+                  <span class="right badge badge-danger">4</span>
+                </p>
+              </a>          
+            </li>
+            <li class="nav-item">
+              <a routerLink="./users" class="nav-link">
+                <i class="nav-icon far fa-user"></i>
+                <p>
+                  Manage Users
+                  <span class="right badge badge-danger">4</span>
+                </p>
+              </a>          
+            </li>
+            <li class="nav-item has-treeview">
+              <a routerLink="./property" class="nav-link">
+                <i class="nav-icon fas fa-building"></i>
+                <p>
+                  Manage Properties
+                  <span class="badge badge-info right">4</span>
+                </p>
+              </a>
+            <li class="nav-item has-treeview">
+              <a routerLink="./charts" class="nav-link">
+                <i class="nav-icon fas fa-chart-pie"></i>
+                <p>
+                  Statistics
+                  <i class="right fas fa-angle-right"></i>
+                </p>
+              </a>      
+            </li>
+            <li class="nav-item has-treeview">
+              <a routerLink="./email" class="nav-link">
+                <i class="nav-icon far fa-envelope"></i>
+                <p>
+                  Mailbox
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                <p>
+                  Forms
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a routerLink="/leaseForm" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Lease form</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/Caution form" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Caution form</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/tagreement" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Terms and agreement form</p>
+                  </a>
+                </li>
+                
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-table"></i>
+                <p>
+                  Tables
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a routerLink="/registrationtable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Registrations Table</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/tenantstable" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Tenants tables</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/visitsrequest" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>visits request table</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item">
+              <a routerLink="/propertylocation" class="nav-link">
+                <i class="nav-icon far fa-map"></i>
+                <p>
+                  Properties Locations
+                  <span class="badge badge-info right">2</span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-header">Other utilities</li>
+            <li class="nav-item">
+              <a routerLink="/calendar" class="nav-link">
+                <i class="nav-icon far fa-calendar-alt"></i>
+                <p>
+                  Calender
+                </p>
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a routerLink="/userguide" class="nav-link">
+                <i class="nav-icon fas fa-book"></i>
+                <p>
+                  User guide
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/todolist" class="nav-link">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                  To do list
+                </p>6
+              </a>
+              <p>
+       
+              </p>
+            </li>
+          </ul>
+        </nav>
+        <!-- /.sidebar-menu -->
+      </div>
+      <!-- /.sidebar -->
+    </aside>
+</div>
+<router-outlet></router-outlet>

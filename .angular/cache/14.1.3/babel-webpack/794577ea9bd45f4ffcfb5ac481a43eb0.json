@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = require(\"./src/gauge\");","map":{"version":3,"names":["module","exports","require"],"sources":["C:/angular1615/RES/node_modules/svg-gauge/index.js"],"sourcesContent":["module.exports = require(\"./src/gauge\");\n"],"mappings":"AAAAA,MAAM,CAACC,OAAP,GAAiBC,OAAO,CAAC,aAAD,CAAxB"},"metadata":{},"sourceType":"script"}

@@ -1,0 +1,10 @@
+nav{
+    position:static;
+}
+.user{
+  font-size: 30px;
+  color: white;
+  border-radius: 50%;
+  border: 2px white;
+}
+

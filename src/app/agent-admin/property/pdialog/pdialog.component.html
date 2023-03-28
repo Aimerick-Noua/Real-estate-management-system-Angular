@@ -1,0 +1,133 @@
+
+          <div class="card-body p-1 p-md-5">
+            <h3 class="">Registration Form</h3>
+            <form #propertyForm="ngForm" (ngSubmit)="saveProperty(propertyForm)" enctype="multipart/form-data">
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="name" [(ngModel)]="property.name" name="name" class="form-control form-control-md" required/>
+                    <label class="form-label" for="name">Property Name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="owner" class="form-control form-control-md"  [(ngModel)]="property.owner"  name="owner" required/>
+                    <label class="form-label" for="owner">Owner</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                  <div class="form-outline datepicker w-100">
+                    <input type="number" class="form-control form-control-md" id="price" [(ngModel)]="property.price" name="price" required/>
+                    <label for="price" class="form-label">price</label>
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4" >
+                  <input type="text" class="form-control form-control-md" id="price" [(ngModel)]="property.location" name="location" required/>
+                  <label for="location" class="form-label">Address</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4" >
+                <h5 class="mb-2 pb-1"><strong>Status</strong> </h5>
+                <div class="form-check form-check-inline">
+                  <mat-radio-group aria-label="Select an option" [(ngModel)]="property.status" name="status" required>
+                    <mat-radio-button class="ml-2" *ngFor="let option of status"  [value]="option">{{option}}</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+                </div>
+
+               
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="category" class="form-control form-control-md" [(ngModel)]="property.category" name="category" required />
+                    <label class="form-label" for="category">Category</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4" >
+                    <div class="form-outline">
+                      <input type="number" id="numKitchen" class="form-control form-control-md" [(ngModel)]="property.numKitchen" name="numKitchen" required/>
+                      <label class="form-label" for="numKitchen">Num_kitchen</label>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="description" class="form-control form-control-md" [(ngModel)]="property.description" name="description" required />
+                    <label class="form-label" for="description">Description</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-4" >
+                    <div class="form-outline">
+                      <input type="number" id="kitchen" class="form-control form-control-md" [(ngModel)]="property.numRoom" name="numRoom" required/>
+                      <label class="form-label" for="kitchen">Number_Room</label>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="number" id="numLivingRoom" class="form-control form-control-md" [(ngModel)]="property.numLivingRoom" name="numLivingRoom" required/>
+                    <label class="form-label" for="numLivingRoom" >Number_palour</label>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-4" >
+                    <div class="form-outline">
+                      <input type="number" id="numBath" class="form-control form-control-md" [(ngModel)]="property.numBath" name="numBath" required>
+                      <label class="form-label" for="numBath">Number_Bath</label>
+                    
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="number" id="description" class="form-control form-control-md" [(ngModel)]="property.area" name="area" required/>
+                    <label class="form-label" for="description" >Area</label>
+                  </div>
+                </div>
+              </div>
+             
+                <div class="col-md-6" style="width: 100;">
+                  <div class="form-outline">
+                    <input type="text" id="nearbyPlaces" class="form-control form-control-md" [(ngModel)]="property.nearbyPlaces" name="nearbyPlaces" required/>
+                    <label class="form-label" for="nearbyPlaces">Nearby Places</label>
+                  </div>
+                </div>
+                            
+              <mat-dialog-actions align="end">
+                <button mat-button mat-dialog-close class="bg-danger">Cancel</button>
+                <button mat-button class="bg-success" type="submit">{{actionBtn}}</button>
+              </mat-dialog-actions>
+            </form>
+            <div class="row">
+              <div class="col-md-6" style="width: 100;">
+                <div class="form-outline">
+                  <input multiple type="file" id="propertyImages" 
+                  class="form-control form-control-md" #selectFile (change)="onFileSelectedEvent($event)" required/>
+                  <label class="form-label" for="propertyImages">Image</label>
+                </div>
+              </div>
+          </div>
+          <div class="row">
+          <mat-grid-list cols="4" rowHeight="4:4">
+            <mat-grid-tile *ngFor="let file of property.propertyImages;let i=index;">
+              <div style="position: static">
+                <span class="btn btn-primary remove" (click)="removeImage(i)">x</span>
+                 <img [src]="file.url" width="100px" height="100px">
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>

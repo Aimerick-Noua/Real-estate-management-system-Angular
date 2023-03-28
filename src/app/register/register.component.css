@@ -1,0 +1,32 @@
+.register-box{
+    margin-left: 25%;
+   
+}
+.input-group{
+    width: 100%;
+}
+#background{
+    width: 100%;
+    height: 100%;
+    background-image: url("/assets/homepage.jpg");
+
+}
+.card{
+height: 100%;
+box-shadow:  2px 3px 5px black;
+
+}
+.reg{
+    display: inline-flex;
+    margin-top: 15%;
+    background-color: white;
+    box-shadow: 2px 3px 5px black;
+
+    
+}
+.img{
+    margin-top: 7%;
+}
+.logo{
+    margin-left: 35%;
+}
